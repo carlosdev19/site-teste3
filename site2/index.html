@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gestão Financeira para Imigrantes — Home</title>
+  <meta name="description" content="Aplicativo de gestão financeira para imigrantes no Brasil — controle de gastos, conversão de moedas e dicas adaptadas ao seu idioma." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --primary:#1E3A8A;
+  --accent:#22A45B;
+  --muted:#6B7280;
+  --radius:14px;
+  --maxw:1100px;
+}
+
+*{
+  box-sizing:border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body{
+  margin:0;
+  background:linear-gradient(180deg,#fbfdff 0%,var(--bg) 100%);
+  color:#0f172a;
+  line-height:1.45;
+}
+
+.layout{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:28px
+}
+
+/* Header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0
+}
+
+.header__brand{
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+
+.brand__logo{
+      width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background: #0072bc;
+}
+
+.logo-box__img {
+    width: 60px;   /* ajuste se quiser maior ou menor */
+    height: 60px;
+    object-fit: contain;
+}
+
+.brand__title{
+  font-weight:700
+}
+
+.brand__subtitle{
+  font-size:12px;
+  color:var(--muted)
+}
+
+.nav{
+  display:flex;
+  gap:18px;
+  align-items:center
+}
+
+.nav__link{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600
+}
+
+/* Buttons */
+.btn{
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block
+}
+
+.btn--primary{
+  background: #0072bc;
+  color:#fff
+}
+
+.btn--outline{
+  border: 2px solid #0072bc;
+  color:#0072bc;;
+  background:transparent
+}
+
+.btn--ghost{
+  border:1px solid rgba(0,0,0,0.06);
+  background:transparent;
+  color:#0f172a
+}
+
+/* Hero */
+.hero{
+  padding:36px 0
+}
+
+.hero__title{
+  font-family:'Montserrat';
+  font-size:36px;
+  margin-bottom:14px
+}
+
+.hero__desc{
+  color:var(--muted);
+  margin-bottom:20px
+}
+
+.cta{
+  display:flex;
+  gap:12px;
+  margin-bottom:18px
+}
+
+.hero__note{
+  color:var(--muted);
+  font-size:14px;
+  margin:18px 0
+}
+
+.hero__tags{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:14px;
+  color:var(--muted)
+}
+
+.tag{
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+
+/* Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:28px 0
+}
+
+.card{
+  background:var(--card);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04)
+}
+
+.card__title{
+  margin:0 0 8px
+}
+
+.card__text{
+  color:var(--muted);
+  font-size:14px;
+  margin:0
+}
+
+/* Sections */
+.section{
+  margin:44px 0
+}
+
+.section__title{
+  font-family:'Montserrat';
+  margin-bottom:12px
+}
+
+.section__subtitle{
+  color:var(--muted);
+  margin-bottom:18px
+}
+
+/* Info boxes */
+.info{
+  display:flex;gap:18px;
+  flex-wrap:wrap;
+  margin-top:18px
+}
+
+.info__box{
+  flex:1;
+  min-width:220px;
+  background:var(--card);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.04)
+}
+
+.info__title{
+  margin:0 0 8px
+}
+
+.info__text{
+  margin:0;
+  color:var(--muted)
+}
+
+/* Form */
+.form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  max-width:720px
+}
+
+.form__input{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.06)
+}
+
+.form__footer{
+  grid-column:1 / -1;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:6px
+}
+
+.form__contact{
+  color:var(--muted);
+  font-size:13px
+}
+
+/* Footer */
+.footer{
+  padding:28px 0;
+  border-top:1px solid rgba(0,0,0,0.04);
+  color:var(--muted)
+}
+
+.footer__content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px
+}
+
+.footer__brand{
+  font-weight:700
+}
+
+.footer__copy{
+  font-size:13px
+}
+
+/* Responsividade */
+@media (max-width:980px){
+  .cards{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+@media (max-width:640px){
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px
+  }
+
+  .nav{
+    flex-wrap:wrap
+  }
+
+  .cards{
+    grid-template-columns:1fr
+  }
+
+  .hero__title{
+    font-size:28px
+  }
+}
+
+
+</style>
+
+<body>
+  <div class="layout">
+    <header class="header">
+      <div class="header__brand">
+        <div class="brand__logo">
+    <img src="../img/50x50.svg" alt="Logo" class="logo-box__img">
+</div>
+        <div class="brand__text">
+          <div class="brand__title">Immigrant Economy</div>
+          <div class="brand__subtitle">Aplicativo social e educativo</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="menu principal">
+        <a class="nav__link" href="#funcionalidades">Funcionalidades</a>
+        <a class="nav__link" href="#sobre">Sobre</a>
+        <a class="nav__link" href="#contato">Contato</a>
+        <a class="btn btn--outline" href="#baixar">Baixar App</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-heading">Facilitando a vida financeira de imigrantes no Brasil</h1>
+          <p class="hero__desc">Controle de gastos, conversão de moedas, lembretes de contas e conteúdo financeiro adaptado ao seu idioma e contexto.</p>
+
+          <div class="cta">
+            <a class="btn btn--primary" href="#baixar">Baixar App</a>
+            <a class="btn btn--ghost" href="#funcionalidades">Conhecer Recursos</a>
+          </div>
+
+          <p class="hero__note">Disponível para Android e iOS — beta acadêmico. Projeto desenvolvido por estudantes para a banca do TCC.</p>
+
+          <div class="hero__tags">
+            <span class="tag">🔒 Privacidade: dados locais, sem venda</span>
+            <span class="tag">🌐 Multi-idioma</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="funcionalidades" class="section" aria-labelledby="funcs-heading">
+        <h2 class="section__title" id="funcs-heading">Funcionalidades principais</h2>
+        <p class="section__subtitle">Ferramentas pensadas para tornar o dia a dia do imigrante mais simples e seguro.</p>
+
+        <div class="cards" role="list">
+          <div class="card" role="listitem">
+            <h4 class="card__title">Tradução automática</h4>
+            <p class="card__text">A interface muda automaticamente para o idioma do usuário com termos financeiros claros.</p>
+          </div>
+
+          <div class="card" role="listitem">
+            <h4 class="card__title">Conversor de moedas</h4>
+            <p class="card__text">Converta rapidamente valores entre moedas com histórico de taxas.</p>
+          </div>
+
+          <div class="card" role="listitem">
+            <h4 class="card__title">Alertas e lembretes</h4>
+            <p class="card__text">Lembretes de contas e vencimentos para evitar multas.</p>
+          </div>
+
+          <div class="card" role="listitem">
+            <h4 class="card__title">Guias locais</h4>
+            <p class="card__text">Mapa de bancos, lotéricas e serviços próximos.</p>
+          </div>
+
+          <div class="card" role="listitem">
+            <h4 class="card__title">Educação financeira</h4>
+            <p class="card__text">Conteúdos práticos sobre orçamento e segurança financeira.</p>
+          </div>
+
+          <div class="card" role="listitem">
+            <h4 class="card__title">Privacidade e segurança</h4>
+            <p class="card__text">Dados armazenados localmente, com exportação opcional.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="section" aria-labelledby="sobre-heading">
+        <h2 class="section__title" id="sobre-heading">Sobre o projeto</h2>
+        <p class="section__subtitle">Projeto de TCC desenvolvido por estudantes com foco em inclusão e educação financeira.</p>
+
+        <div class="info">
+          <div class="info__box">
+            <h4 class="info__title">Objetivo</h4>
+            <p class="info__text">Aumentar autonomia financeira e reduzir vulnerabilidade entre imigrantes.</p>
+          </div>
+
+          <div class="info__box">
+            <h4 class="info__title">Metodologia</h4>
+            <p class="info__text">Entrevistas, análise documental e prototipação.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section" aria-labelledby="contato-heading">
+        <h2 class="section__title" id="contato-heading">Fale conosco</h2>
+        <p class="section__subtitle">Dúvidas, parcerias ou interesse em testar o app? Entre em contato.</p>
+
+        <form class="form" action="#" method="post">
+          <input class="form__input" id="nome" name="nome" placeholder="Nome" required />
+          <input class="form__input" id="email" name="email" type="email" placeholder="Email" required />
+          <input class="form__input" id="nacionalidade" name="nacionalidade" placeholder="Nacionalidade (opcional)" />
+          <input class="form__input" id="mensagem" name="mensagem" placeholder="Mensagem" />
+
+          <div class="form__footer">
+            <button class="btn btn--primary" type="submit">Enviar mensagem</button>
+            <div class="form__contact">Também estamos no Instagram e no email: <strong>contato@gestaofinanceira.org</strong></div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__brand">Gestão Financeira — Imigrantes</div>
+        <div class="footer__copy">© "Nome da Instituição" — Projeto de TCC • 2025</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
